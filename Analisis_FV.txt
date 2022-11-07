@@ -1,0 +1,218 @@
+%Este código entraga los gráficos necesarios para analizar el diseño del sistema fotovoltraico On-Grid
+clear all;
+clc;
+
+%% Vectores de tiempo
+X_anual = [01,02,03,04,05,06,07,08,09,10,11,12]; %Vector utilizado para análisis anuales.
+X_diario = [00,01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23]; %Vector utilizado para análisis diarios.
+
+%% Gráficos de perfiles horarios(promedios)de nubosidad
+Y_nub_anual = [13.39,13.0,12.72,16.43,21.02,18.22,19.68,22.68,19.55,20.15,17.65,15.79]; %Perfil anual de nubosidad.
+Y_nub_diario = [0.0,0.0,0.0,0.0,0.0,0.0,8.96,19.5,34.23,43.42,43.04,42.07,41.95,40.16,39.36,35.18,32.23,25.78,12.82,2.13,0.44,0.0,0.0,0.0]; %Perfil diario de nubosidad.
+
+%Gráfica de ciclo anual de nubosidad
+figure; %Crear figura.
+h = plot(X_anual,Y_nub_anual); %Limitar gráfico
+axis([1 12 0 25]); %Limitar gráfico.
+set(h,'LineWidth',2); %Tamaño de la linea.
+xticks([1 2 3 4 5 6 7 8 9 10 11 12]); %Valores a mostrar en el eje X.
+xticklabels({'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'});%Nombrando los valores en el eje Y.
+ax = gca;
+ax.FontSize = 14; %Cambiando tamaño de la fuente.
+title('\bf Ciclo anual de frecuencia de nubosidad','FontSize', 25); %Título.
+xlabel('\bf Mes del año','FontSize', 20); %Nombrando eje X.
+ylabel('\bf Porcentaje de nubosidad [%]','FontSize', 20); %Nombrando eje Y.
+legend({'\bf Perfil de nubosidad'},'FontSize', 20,'Location','Northeast'); %Leyenda.
+grid on; %Cuadriculando gráfico.
+
+%Gráfica de ciclo diario de nubosidad
+figure; %Crear figura.
+h = plot(X_diario,Y_nub_diario); %Graficar.
+axis([0 23 0 50]); %Limitar gráfico.
+set(h,'LineWidth',2); %Tamaño de la linea.
+xticks([0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]); %Valores a mostrar en el eje X.
+ax = gca;
+ax.FontSize = 14; %Cambiando tamaño de la fuente.
+title('\bf Ciclo diario de frecuencia de nubosidad','FontSize', 25); %Título.
+xlabel('\bf Hora del día','FontSize', 20); %Nombrando eje X.
+ylabel('\bf Porcentaje de nubosidad [%]','FontSize', 20); %Nombrando eje Y.
+legend({'\bf Perfil de nubosidad'},'FontSize', 20,'Location','Northeast'); %Leyenda.
+grid on; %Cuadriculando gráfico.
+
+%% Gráficos de temperatura
+Y_temp_anual = [16.91,16.66,15.51,13.2,11.36,10.35,9.55,9.99,10.82,12.01,13.89,15.48]; %Temperatura promedio mensual.
+Y_temp_diario = [11.19,10.85,10.56,10.26,9.94,9.62,9.47,9.81,10.72,12.11,13.58,14.95,16.0,16.76,17.21,17.2,16.76,15.99,14.99,13.97,13.1,12.46,11.98,11.57]; %Temperatura promedio por hora.
+
+%Gráfica de ciclo anual de temperatura
+figure; %Crear figura.
+h = plot(X_anual,Y_temp_anual); %Graficar.
+axis([1 12 0 19]); %Limitar gráfico.
+set(h,'LineWidth',2); %Tamaño de la linea.
+xticks([1 2 3 4 5 6 7 8 9 10 11 12]); %Valores a mostrar en el eje X.
+xticklabels({'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'});%Nombrando los valores en el eje Y.
+ax = gca;
+ax.FontSize = 14; %Cambiando tamaño de la fuente.
+title('\bf Ciclo anual de temperatura','FontSize', 25); %Título.
+xlabel('\bf Mes del año','FontSize', 20); %Nombrando eje X.
+ylabel('\bf Temperatura [°C]','FontSize', 20); %Nombrando eje Y.
+legend({'\bf Temperatura [°C]'},'FontSize', 20,'Location','Northeast'); %Leyenda.
+grid on; %Cuadriculando gráfico.
+
+%Gráfica de ciclo diario de temperatura
+figure; %Crear figura.
+h = plot(X_diario,Y_temp_diario); %Graficar.
+axis([0 23 0 19]); %Limitar gráfico
+set(h,'LineWidth',2); %Tamaño de la linea.
+xticks([0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]); %Valores a mostrar en el eje X.
+ax = gca;
+ax.FontSize = 14; %Cambiando tamaño de la fuente.
+title('\bf Ciclo diario de temperatura','FontSize', 25); %Título.
+xlabel('\bf Hora de día','FontSize', 20); %Nombrando eje X.
+ylabel('\bf Temperatura [°C]','FontSize', 20); %Nombrando eje Y.
+legend({'\bf Temperatura [°C]'},'FontSize', 20,'Location','Northeast'); %Leyenda.
+grid on; %Cuadriculando gráfico.
+
+%% Gráficos de velocidad del viento
+Y_viento_anual = [2.26,2.05,1.95,1.8,1.82,2.32,2.4,2.32,1.94,2.01,2.42,2.44]; %Velocidad del viento promedio mensual.
+Y_viento_diario = [1.74,1.65,1.6,1.55,1.56,1.56,1.54,1.56,1.64,1.78,2.02,2.29,2.54,2.74,2.95,3.06,3.07,2.96,2.78,2.55,2.34,2.14,2.01,1.87]; %Velocidad del viento promedio por hora.
+
+%Gráfica de ciclo anual de velocidad del viento
+figure; %Crear figura.
+h = plot(X_anual,Y_viento_anual); %Graficar.
+axis([1 12 0 3]); %Limitar gráfico.
+set(h,'LineWidth',2); %Tamaño de la linea.
+xticks([1 2 3 4 5 6 7 8 9 10 11 12]); %Valores a mostrar en el eje X.
+xticklabels({'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'});%Nombrando los valores en el eje Y.
+ax = gca;
+ax.FontSize = 14; %Cambiando tamaño de la fuente.
+title('\bf Ciclo anual de la velocidad del viento','FontSize', 25); %Título.
+xlabel('\bf Mes del año','FontSize', 20); %Nombrando eje X.
+ylabel('\bf Velocidad del viento [m/s]','FontSize', 20); %Nombrando eje Y.
+legend({'\bf Velocidad del viento [m/s]'},'FontSize', 20,'Location','Northeast'); %Leyenda.
+grid on; %Cuadriculando gráfico.
+
+%Gráfica de ciclo diario de velocidad del viento
+figure; %Crear figura.
+h = plot(X_diario,Y_viento_diario); %Graficar.
+axis([0 23 0 3.5]); %Limitar gráfico
+set(h,'LineWidth',2); %Tamaño de la linea.
+xticks([0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]); %Valores a mostrar en el eje X.
+ax = gca;
+ax.FontSize = 14; %Cambiando tamaño de la fuente.
+title('\bf Ciclo diario de la velocidad del viento','FontSize', 25); %Título.
+xlabel('\bf Hora del día','FontSize', 20); %Nombrando eje X.
+ylabel('\bf Velocidad del viento [m/s]','FontSize', 20); %Nombrando eje Y.
+legend({'\bf Velocidad del viento [m/s]'},'FontSize', 20,'Location','Northeast'); %Leyenda.
+grid on; %Cuadriculando gráfico.
+
+%% Gráficos de frecuencias de sombra
+Y_viento_anual = [39.86,45.83,49.72,54.17,59.21,62.5,62.06,54.3,52.15,46.73,41.67,38.86]; %Frecuencia de sombras promedio mensual.
+Y_viento_diario = [100.0,100.0,100.0,100.0,100.0,100.0,78.75,50.8,19.46,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,23.63,55.96,86.11,100.0,100.0,100.0]; %Frecuencia de sombras promedio por hora.
+
+%Gráfica de ciclo anual de frecuencia de sombras
+figure; %Crear figura.
+h = plot(X_anual,Y_viento_anual); %Graficar.
+axis([1 12 0 70]); %Limitar gráfico.
+set(h,'LineWidth',2); %Tamaño de la linea.
+xticks([1 2 3 4 5 6 7 8 9 10 11 12]); %Valores a mostrar en el eje X.
+xticklabels({'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'});%Nombrando los valores en el eje Y.
+ax = gca;
+ax.FontSize = 14; %Cambiando tamaño de la fuente.
+title('\bf Ciclo anual de frecuencia de sombras','FontSize', 25); %Título.
+xlabel('\bf Mes del año','FontSize', 20); %Nombrando eje X.
+ylabel('\bf Frecuencia de sombras [%]','FontSize', 20); %Nombrando eje Y.
+legend({'\bf Frecuencia de sombras [%]'},'FontSize', 20,'Location','Northeast'); %Leyenda.
+grid on; %Cuadriculando gráfico.
+
+%Gráfica de ciclo diario de frecuencia de sombras
+figure; %Crear figura.
+h = plot(X_diario,Y_viento_diario); %Graficar.
+axis([0 23 0 120]); %Limitar gráfico
+set(h,'LineWidth',2); %Tamaño de la linea.
+xticks([0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]); %Valores a mostrar en el eje X.
+ax = gca;
+ax.FontSize = 14; %Cambiando tamaño de la fuente.
+title('\bf Ciclo diario de frecuencia de sombras','FontSize', 25); %Título.
+xlabel('\bf Hora del día','FontSize', 20); %Nombrando eje X.
+ylabel('\bf Frecuencia de sombras [%]','FontSize', 20); %Nombrando eje Y.
+legend({'\bf Frecuencia de sombras [%]'},'FontSize', 20,'Location','Northeast'); %Leyenda.
+grid on; %Cuadriculando gráfico.
+
+%% Gráficos de radiación e insolación incidentes global
+Y_rad_plano_anual = [8.27,7.15,5.63,3.65,2.17,1.81,1.88,2.67,4.42,5.92,7.65,8.4]; %Insolación incidente en el plano horizontal.
+Y_rad_incl_anual = [7.37,7.11,6.63,5.11,3.49,3.18,3.17,3.84,5.38,6.15,7.01,7.25]; %Insolación incidente en un plano con inclinación igual a la latitud del sitio.
+Y_rad_plano_diario = [0.0,0.0,0.0,0.0,0.0,0.0,6.6,57.2,160.36,302.35,438.32,557.06,632.28,659.36,629.22,564.54,448.2,299.05,149.76,48.7,1.35,0.0,0.0,0.0]; %Radiación incidente en el plano horizontal.
+Y_rad_incl_diario = [0.0,0.0,0.0,0.0,0.0,0.0,2.74,25.26,144.06,328.98,493.61,634.54,721.6,754.79,720.48,650.29,512.2,337.72,124.88,13.22,0.72,0.0,0.0,0.0]; %Radiación incidente en un plano con inclinación igual a la latitud del sitio.
+
+%Gráfica de ciclo anual de insolación incidente global
+figure; %Crear figura.
+h = plot(X_anual,Y_rad_plano_anual,X_anual,Y_rad_incl_anual); %Graficar.
+axis([1 12 0 10]); %Limitar gráfico.
+set(h,'LineWidth',2); %Tamaño de la linea.
+xticks([1 2 3 4 5 6 7 8 9 10 11 12]); %Valores a mostrar en el eje X.
+xticklabels({'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'});%Nombrando los valores en el eje Y.
+ax = gca;
+ax.FontSize = 14; %Cambiando tamaño de la fuente.
+title('\bf Ciclo anual de insolación incidente global','FontSize', 25); %Título.
+xlabel('\bf Mes del año','FontSize', 20); %Nombrando eje X.
+ylabel('\bf Insolación incidente [kWh/m²]','FontSize', 20); %Nombrando eje Y.
+legend({'\bf Insolación incidente en el plano horizontal [kWh/m²]','\bf Insolación incidente en un plano con inclinación igual a la latitud del sitio [kWh/m²]'},'FontSize', 20,'Location','Northeast'); %Leyenda.
+grid on; %Cuadriculando gráfico.
+
+%Gráfica de ciclo diario de radiación incidente global
+figure; %Crear figura.
+h = plot(X_diario,Y_rad_plano_diario,X_diario,Y_rad_incl_diario); %Graficar.
+axis([0 23 0 900]); %Limitar gráfico
+set(h,'LineWidth',2); %Tamaño de la linea.
+xticks([0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]); %Valores a mostrar en el eje X.
+ax = gca;
+ax.FontSize = 14; %Cambiando tamaño de la fuente.
+title('\bf Ciclo diario de radiación incidente global','FontSize', 25); %Título.
+xlabel('\bf Hora del día','FontSize', 20); %Nombrando eje X.
+ylabel('\bf Radiación incidente [W/m²]','FontSize', 20); %Nombrando eje Y.
+legend({'\bf Radiación incidente en el plano horizontal [W/m²]','\bf Radiación incidente en un plano con inclinación igual a la latitud del sitio [W/m²]'},'FontSize', 20,'Location','Northeast'); %Leyenda.
+grid on; %Cuadriculando gráfico.
+
+%% Gráficos de radiación e insolación incidentes
+Y_gen1_anual = [107.71,91.67,92.18,66.9,46.46,40.76,42.06,51.84,72.77,88.21,99.03,107.16]; %Generación FV caso 1.
+Y_gen2_anual = [102.05,88.89,92.31,69.19,49.13,43.7,44.8,54.12,73.24,86.02,94.77,100.86]; %Generación FV caso 2.
+Y_gen3_anual = [100.85,88.39,92.26,69.82,50.02,44.73,45.7,54.56,73.64,86.06,93.72,99.41]; %Generación FV caso 3.
+Y_cons_anual = [236,200,234,226,230,219,258,257,257,204,223,202]; %Consumo.
+Y_barra_anual = [Y_gen1_anual;Y_gen2_anual;Y_gen3_anual;Y_cons_anual];%Creando matriz.
+Y_barra_anual = Y_barra_anual';%Matriz transpueta para relizar gráfico de barras.
+
+Y_gen1_diario = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.04,0.12,0.2,0.28,0.32,0.34,0.34,0.32,0.26,0.18,0.07,0.01,0.0,0.0,0.0,0.0]; %Generación FV caso 1.
+Y_gen2_diario = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.01,0.05,0.15,0.23,0.29,0.33,0.35,0.33,0.3,0.23,0.15,0.04,0.0,0.0,0.0,0.0,0.0]; %Generación FV caso 2.
+Y_gen3_diario = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.03,0.11,0.2,0.27,0.32,0.34,0.34,0.32,0.26,0.18,0.07,0.01,0.0,0.0,0.0,0.0]; %Generación FV caso 3.
+Y_cons_diario = [0.1,0.1,0.1,0.1,0.1,0.15,0.3,0.45,0.55,0.3,0.2,0.5,0.7,0.6,0.3,0.2,0.2,0.5,0.7,0.8,0.7,0.6,0.3,0.1]; %Consumo.
+Y_barra_diario = [Y_gen1_diario;Y_gen2_diario;Y_gen3_diario;Y_cons_diario];%Creando matriz.
+Y_barra_diario = Y_barra_diario';%Matriz transpueta para relizar gráfico de barras.
+
+%Gráfica de ciclo anual de generación y consumo
+figure; %Crear figura.
+h = bar(Y_barra_anual); %Graficar.
+ylim([0 300]); %Limitar gráfico.
+set(h,'LineWidth',2); %Tamaño de la linea.
+xticks([1 2 3 4 5 6 7 8 9 10 11 12]); %Valores a mostrar en el eje X.
+xticklabels({'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'});%Nombrando los valores en el eje Y.
+ax = gca;
+ax.FontSize = 14; %Cambiando tamaño de la fuente.
+title('\bf Energía generada vs energía consumida en un ciclo anual','FontSize', 25); %Título.
+xlabel('\bf Mes del año','FontSize', 20); %Nombrando eje X.
+ylabel('\bf Energía [kWh]','FontSize', 20); %Nombrando eje Y.
+legend({'\bf Caso de generación 1 [kWh]','\bf Caso de generación 2 [kWh]','\bf Caso de generación 3 [kWh]','\bf Consumo del hogar [kWh]'},'FontSize', 20,'Location','Northeast'); %Leyenda.
+grid on; %Cuadriculando gráfico.
+
+%Gráfica de ciclo diario de gerenación y consumo
+figure; %Crear figura.
+h = bar(Y_barra_diario); %Graficar.
+ylim([0 0.9]); %Limitar gráfico.
+set(h,'LineWidth',2); %Tamaño de la linea.
+xticks([0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]); %Valores a mostrar en el eje X.
+ax = gca;
+ax.FontSize = 14; %Cambiando tamaño de la fuente.
+title('\bf Energía generada vs energía consumida en un ciclo diario','FontSize', 25); %Título.
+xlabel('\bf Hora del día','FontSize', 20); %Nombrando eje X.
+ylabel('\bf Energía [kWh]','FontSize', 20); %Nombrando eje Y.
+legend({'\bf Caso de generación 1 [kWh]','\bf Caso de generación 2 [kWh]','\bf Caso de generación 3 [kWh]','\bf Consumo del hogar [kWh]'},'FontSize', 20,'Location','Northwest'); %Leyenda.
+grid on; %Cuadriculando gráfico.
