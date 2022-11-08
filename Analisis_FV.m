@@ -14,11 +14,11 @@ Y_nub_diario = [0.0,0.0,0.0,0.0,0.0,0.0,8.96,19.5,34.23,43.42,43.04,42.07,41.95,
 figure; %Crear figura.
 h = plot(X_anual,Y_nub_anual); %Limitar gráfico
 axis([1 12 0 25]); %Limitar gráfico.
-set(h,'LineWidth',2); %Tamaño de la linea.
+set(h,'LineWidth',4); %Tamaño de la linea.
 xticks([1 2 3 4 5 6 7 8 9 10 11 12]); %Valores a mostrar en el eje X.
 xticklabels({'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'});%Nombrando los valores en el eje Y.
 ax = gca;
-ax.FontSize = 14; %Cambiando tamaño de la fuente.
+ax.FontSize = 20; %Cambiando tamaño de la fuente.
 title('\bf Ciclo anual de frecuencia de nubosidad','FontSize', 25); %Título.
 xlabel('\bf Mes del año','FontSize', 20); %Nombrando eje X.
 ylabel('\bf Porcentaje de nubosidad [%]','FontSize', 20); %Nombrando eje Y.
@@ -29,10 +29,10 @@ grid on; %Cuadriculando gráfico.
 figure; %Crear figura.
 h = plot(X_diario,Y_nub_diario); %Graficar.
 axis([0 23 0 50]); %Limitar gráfico.
-set(h,'LineWidth',2); %Tamaño de la linea.
+set(h,'LineWidth',4); %Tamaño de la linea.
 xticks([0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]); %Valores a mostrar en el eje X.
 ax = gca;
-ax.FontSize = 14; %Cambiando tamaño de la fuente.
+ax.FontSize = 20; %Cambiando tamaño de la fuente.
 title('\bf Ciclo diario de frecuencia de nubosidad','FontSize', 25); %Título.
 xlabel('\bf Hora del día','FontSize', 20); %Nombrando eje X.
 ylabel('\bf Porcentaje de nubosidad [%]','FontSize', 20); %Nombrando eje Y.
@@ -47,11 +47,11 @@ Y_temp_diario = [11.19,10.85,10.56,10.26,9.94,9.62,9.47,9.81,10.72,12.11,13.58,1
 figure; %Crear figura.
 h = plot(X_anual,Y_temp_anual); %Graficar.
 axis([1 12 0 19]); %Limitar gráfico.
-set(h,'LineWidth',2); %Tamaño de la linea.
+set(h,'LineWidth',4); %Tamaño de la linea.
 xticks([1 2 3 4 5 6 7 8 9 10 11 12]); %Valores a mostrar en el eje X.
 xticklabels({'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'});%Nombrando los valores en el eje Y.
 ax = gca;
-ax.FontSize = 14; %Cambiando tamaño de la fuente.
+ax.FontSize = 20; %Cambiando tamaño de la fuente.
 title('\bf Ciclo anual de temperatura','FontSize', 25); %Título.
 xlabel('\bf Mes del año','FontSize', 20); %Nombrando eje X.
 ylabel('\bf Temperatura [°C]','FontSize', 20); %Nombrando eje Y.
@@ -62,10 +62,10 @@ grid on; %Cuadriculando gráfico.
 figure; %Crear figura.
 h = plot(X_diario,Y_temp_diario); %Graficar.
 axis([0 23 0 19]); %Limitar gráfico
-set(h,'LineWidth',2); %Tamaño de la linea.
+set(h,'LineWidth',4); %Tamaño de la linea.
 xticks([0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]); %Valores a mostrar en el eje X.
 ax = gca;
-ax.FontSize = 14; %Cambiando tamaño de la fuente.
+ax.FontSize = 20; %Cambiando tamaño de la fuente.
 title('\bf Ciclo diario de temperatura','FontSize', 25); %Título.
 xlabel('\bf Hora de día','FontSize', 20); %Nombrando eje X.
 ylabel('\bf Temperatura [°C]','FontSize', 20); %Nombrando eje Y.
@@ -80,11 +80,11 @@ Y_viento_diario = [1.74,1.65,1.6,1.55,1.56,1.56,1.54,1.56,1.64,1.78,2.02,2.29,2.
 figure; %Crear figura.
 h = plot(X_anual,Y_viento_anual); %Graficar.
 axis([1 12 0 3]); %Limitar gráfico.
-set(h,'LineWidth',2); %Tamaño de la linea.
+set(h,'LineWidth',4); %Tamaño de la linea.
 xticks([1 2 3 4 5 6 7 8 9 10 11 12]); %Valores a mostrar en el eje X.
 xticklabels({'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'});%Nombrando los valores en el eje Y.
 ax = gca;
-ax.FontSize = 14; %Cambiando tamaño de la fuente.
+ax.FontSize = 20; %Cambiando tamaño de la fuente.
 title('\bf Ciclo anual de la velocidad del viento','FontSize', 25); %Título.
 xlabel('\bf Mes del año','FontSize', 20); %Nombrando eje X.
 ylabel('\bf Velocidad del viento [m/s]','FontSize', 20); %Nombrando eje Y.
@@ -95,10 +95,10 @@ grid on; %Cuadriculando gráfico.
 figure; %Crear figura.
 h = plot(X_diario,Y_viento_diario); %Graficar.
 axis([0 23 0 3.5]); %Limitar gráfico
-set(h,'LineWidth',2); %Tamaño de la linea.
+set(h,'LineWidth',4); %Tamaño de la linea.
 xticks([0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]); %Valores a mostrar en el eje X.
 ax = gca;
-ax.FontSize = 14; %Cambiando tamaño de la fuente.
+ax.FontSize = 20; %Cambiando tamaño de la fuente.
 title('\bf Ciclo diario de la velocidad del viento','FontSize', 25); %Título.
 xlabel('\bf Hora del día','FontSize', 20); %Nombrando eje X.
 ylabel('\bf Velocidad del viento [m/s]','FontSize', 20); %Nombrando eje Y.
@@ -113,11 +113,11 @@ Y_viento_diario = [100.0,100.0,100.0,100.0,100.0,100.0,78.75,50.8,19.46,0.0,0.0,
 figure; %Crear figura.
 h = plot(X_anual,Y_viento_anual); %Graficar.
 axis([1 12 0 70]); %Limitar gráfico.
-set(h,'LineWidth',2); %Tamaño de la linea.
+set(h,'LineWidth',4); %Tamaño de la linea.
 xticks([1 2 3 4 5 6 7 8 9 10 11 12]); %Valores a mostrar en el eje X.
 xticklabels({'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'});%Nombrando los valores en el eje Y.
 ax = gca;
-ax.FontSize = 14; %Cambiando tamaño de la fuente.
+ax.FontSize = 20; %Cambiando tamaño de la fuente.
 title('\bf Ciclo anual de frecuencia de sombras','FontSize', 25); %Título.
 xlabel('\bf Mes del año','FontSize', 20); %Nombrando eje X.
 ylabel('\bf Frecuencia de sombras [%]','FontSize', 20); %Nombrando eje Y.
@@ -128,10 +128,10 @@ grid on; %Cuadriculando gráfico.
 figure; %Crear figura.
 h = plot(X_diario,Y_viento_diario); %Graficar.
 axis([0 23 0 120]); %Limitar gráfico
-set(h,'LineWidth',2); %Tamaño de la linea.
+set(h,'LineWidth',4); %Tamaño de la linea.
 xticks([0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]); %Valores a mostrar en el eje X.
 ax = gca;
-ax.FontSize = 14; %Cambiando tamaño de la fuente.
+ax.FontSize = 20; %Cambiando tamaño de la fuente.
 title('\bf Ciclo diario de frecuencia de sombras','FontSize', 25); %Título.
 xlabel('\bf Hora del día','FontSize', 20); %Nombrando eje X.
 ylabel('\bf Frecuencia de sombras [%]','FontSize', 20); %Nombrando eje Y.
@@ -148,11 +148,11 @@ Y_rad_incl_diario = [0.0,0.0,0.0,0.0,0.0,0.0,2.74,25.26,144.06,328.98,493.61,634
 figure; %Crear figura.
 h = plot(X_anual,Y_rad_plano_anual,X_anual,Y_rad_incl_anual); %Graficar.
 axis([1 12 0 10]); %Limitar gráfico.
-set(h,'LineWidth',2); %Tamaño de la linea.
+set(h,'LineWidth',4); %Tamaño de la linea.
 xticks([1 2 3 4 5 6 7 8 9 10 11 12]); %Valores a mostrar en el eje X.
 xticklabels({'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'});%Nombrando los valores en el eje Y.
 ax = gca;
-ax.FontSize = 14; %Cambiando tamaño de la fuente.
+ax.FontSize = 20; %Cambiando tamaño de la fuente.
 title('\bf Ciclo anual de insolación incidente global','FontSize', 25); %Título.
 xlabel('\bf Mes del año','FontSize', 20); %Nombrando eje X.
 ylabel('\bf Insolación incidente [kWh/m²]','FontSize', 20); %Nombrando eje Y.
@@ -163,10 +163,10 @@ grid on; %Cuadriculando gráfico.
 figure; %Crear figura.
 h = plot(X_diario,Y_rad_plano_diario,X_diario,Y_rad_incl_diario); %Graficar.
 axis([0 23 0 900]); %Limitar gráfico
-set(h,'LineWidth',2); %Tamaño de la linea.
+set(h,'LineWidth',4); %Tamaño de la linea.
 xticks([0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]); %Valores a mostrar en el eje X.
 ax = gca;
-ax.FontSize = 14; %Cambiando tamaño de la fuente.
+ax.FontSize = 20; %Cambiando tamaño de la fuente.
 title('\bf Ciclo diario de radiación incidente global','FontSize', 25); %Título.
 xlabel('\bf Hora del día','FontSize', 20); %Nombrando eje X.
 ylabel('\bf Radiación incidente [W/m²]','FontSize', 20); %Nombrando eje Y.
@@ -192,11 +192,11 @@ Y_barra_diario = Y_barra_diario';%Matriz transpueta para relizar gráfico de bar
 figure; %Crear figura.
 h = bar(Y_barra_anual); %Graficar.
 ylim([0 300]); %Limitar gráfico.
-set(h,'LineWidth',2); %Tamaño de la linea.
+set(h,'LineWidth',4); %Tamaño de la linea.
 xticks([1 2 3 4 5 6 7 8 9 10 11 12]); %Valores a mostrar en el eje X.
 xticklabels({'Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'});%Nombrando los valores en el eje Y.
 ax = gca;
-ax.FontSize = 14; %Cambiando tamaño de la fuente.
+ax.FontSize = 20; %Cambiando tamaño de la fuente.
 title('\bf Energía generada vs energía consumida en un ciclo anual','FontSize', 25); %Título.
 xlabel('\bf Mes del año','FontSize', 20); %Nombrando eje X.
 ylabel('\bf Energía [kWh]','FontSize', 20); %Nombrando eje Y.
@@ -207,10 +207,12 @@ grid on; %Cuadriculando gráfico.
 figure; %Crear figura.
 h = bar(Y_barra_diario); %Graficar.
 ylim([0 0.9]); %Limitar gráfico.
-set(h,'LineWidth',2); %Tamaño de la linea.
-xticks([0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]); %Valores a mostrar en el eje X.
+set(h,'LineWidth',4); %Tamaño de la linea.
+xticks([1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24]); %Valores a mostrar en el eje X.
+xticklabels({'0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24'});%Nombrando los valores en el eje X.
+
 ax = gca;
-ax.FontSize = 14; %Cambiando tamaño de la fuente.
+ax.FontSize = 20; %Cambiando tamaño de la fuente.
 title('\bf Energía generada vs energía consumida en un ciclo diario','FontSize', 25); %Título.
 xlabel('\bf Hora del día','FontSize', 20); %Nombrando eje X.
 ylabel('\bf Energía [kWh]','FontSize', 20); %Nombrando eje Y.
